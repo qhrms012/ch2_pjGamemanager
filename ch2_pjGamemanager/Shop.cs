@@ -37,7 +37,7 @@ namespace Myshop
                     }
                     else
                     {
-                        Console.WriteLine($"{Buyingshop[i].name} | {Buyingshop[i].description} {Buyingshop[i].price} G.");
+                        Console.WriteLine($"{Buyingshop[i].name} | {Buyingshop[i].description} |  공격력 : {Buyingshop[i].attack} | 방어력 : {Buyingshop[i].defense} | {Buyingshop[i].price} G.");
                     }
                 }
                 Console.WriteLine("\n1. 아이템 구매");
@@ -100,7 +100,7 @@ namespace Myshop
                 }
                 else
                 {
-                    Console.WriteLine($"{Buyingshop[i].name} | {Buyingshop[i].description} |  {Buyingshop[i].price} G");
+                    Console.WriteLine($"{Buyingshop[i].name} | {Buyingshop[i].description} |  공격력 : {Buyingshop[i].attack} | 방어력 : {Buyingshop[i].defense} | {Buyingshop[i].price} G");
                 }
             }
 
