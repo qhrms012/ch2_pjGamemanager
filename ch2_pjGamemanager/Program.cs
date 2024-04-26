@@ -12,9 +12,12 @@ namespace ch2_pjGamemanager
     class Program
 
     {
+        static Job selectedJob = null;
         static void Main(string[] args)
         {
-           
+            
+            Program program = new Program();
+
             Console.WriteLine("게임을 시작합니다.");
             Console.WriteLine("직업을 선택해주세요:");
             Console.WriteLine("1. 전사");
@@ -22,22 +25,24 @@ namespace ch2_pjGamemanager
             Console.WriteLine("3. 궁수");
 
             int choice = int.Parse(Console.ReadLine());
+            
+            
             switch (choice)
             {
                 case 1:
-                    Job.SelectJob(Job.Warrior);
+                    Job.Selectjob(Job.Warrior);
                     break;
                 case 2:
-                    Job.SelectJob(Job.Mage);
+                    Job.Selectjob(Job.Mage);
                     break;
                 case 3:
-                    Job.SelectJob(Job.Archer);
+                    Job.Selectjob(Job.Archer);
                     break;
                 default:
                     Console.WriteLine("잘못된 입력입니다.");
                     return;
             }
-
+            
             Console.WriteLine($"당신은 {Job.SelectedJob.Name}입니다.");
             Console.WriteLine($"체력은: {Job.SelectedJob.Health}입니다.");
             Console.WriteLine($"공격력: {Job.SelectedJob.AttackPower}");
@@ -50,8 +55,11 @@ namespace ch2_pjGamemanager
 
             static void Startgame()
             {
+                
+
                 while (true)
                 {
+                    
                     Console.WriteLine("스파르타 마을에 오신 여러분 환영합니다.");
                     Console.WriteLine("이곳에서 던전으로 들어가기전 활동을 할 수 있습니다.");
                     Console.WriteLine(" ");
@@ -63,17 +71,19 @@ namespace ch2_pjGamemanager
                     Console.WriteLine(">> ");
 
                     string input = Console.ReadLine();
-
+                    Job selectedJob = null;
                     switch (input)
                     {
                         case "1":
-                            Status.PrintStatus(Job.SelectedJob); // 상태보기
+                            
+                            Status.PrintStatus(selectedJob); // 상태보기
                             break;
                         case "2":
                             Inventory.ShowInventory(); //인벤토리
                             break;
                         case "3":
-                            Shop.BuyShop();
+                            Shop shop = new Shop();
+                            shop.BuyShop();
                             break;
 
                     }

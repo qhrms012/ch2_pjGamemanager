@@ -16,7 +16,7 @@ namespace Myshop
     public class Shop
     {
         public static List<Item> Buyingshop = new List<Item>();
-        public static void BuyShop()
+        public  void BuyShop()
         {
             
             
@@ -27,6 +27,7 @@ namespace Myshop
                 Console.WriteLine($"{Status.Gold}");
                 Console.WriteLine("");
                 Console.WriteLine("[아이템목록]");
+
 
                 for (int i = 0; i < Buyingshop.Count; i++)
                 {
@@ -112,14 +113,18 @@ namespace Myshop
                 {
                     if (Buyingshop[index - 1].purchased)
                     {
+
                         Console.WriteLine("이미 구매한 아이템입니다.");
+
                     }
                     else if (Status.Gold >= Buyingshop[index - 1].price)
                     {
+
                         Status.Gold -= Buyingshop[index - 1].price;
                         Inventory.inventory.Add(new Item(Buyingshop[index - 1]));
                         Buyingshop[index - 1].purchased = true;
                         Console.WriteLine($"\"{Buyingshop[index - 1].name}\"를 구매했습니다.");
+
                     }
                     else
                     {

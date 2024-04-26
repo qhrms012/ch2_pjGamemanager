@@ -15,6 +15,7 @@ namespace MyStatus
     {
         public static int level = 1;
         public static int Gold = 2000;
+
         public static void PrintStatus(Job job)
         {
             Console.WriteLine("상태보기");

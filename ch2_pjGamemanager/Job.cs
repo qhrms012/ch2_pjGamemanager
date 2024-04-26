@@ -9,14 +9,16 @@ using System.ComponentModel.Design;
 
 namespace JobClass
 {
+    
     public class Job
     {
+        
         public string Name { get; private set; }
         public int Health { get; private set; }
         public int AttackPower { get; private set; }
         public int DefensePower { get; private set; }
 
-        private Job(string name, int health, int attackPower, int defensePower)
+        private  Job(string name, int health, int attackPower, int defensePower)
         {
 
             Name = name;
@@ -32,12 +34,11 @@ namespace JobClass
 
         public static Job SelectedJob { get; private set; }
 
-        public static void SelectJob(Job job)
+        public static void Selectjob(Job job)
 
         {
+
             SelectedJob = job;
-
-
 
         }
 
